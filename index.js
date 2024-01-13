@@ -18,8 +18,10 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/api/auth',require('./routes/auth'));
-
 app.use('/api/events',require('./routes/events'));
+app.get('*',(req,res)=>{
+    res.sendFile(__dirname + '')
+})
 //TODO:auto //crear, login, renew
 //TODO: CRUD, Eventos
 
